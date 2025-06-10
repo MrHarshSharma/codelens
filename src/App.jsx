@@ -42,7 +42,7 @@ function App() {
       <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
         <div className="nav-container">
           <div className="nav-logo">
-            <h2>CodeLens</h2>
+            <h2>ConstLens</h2>
           </div>
           <div className={`nav-menu ${isMenuOpen ? 'active' : ''}`}>
             <a href="#home" className="nav-link" onClick={() => setIsMenuOpen(false)}>Home</a>
@@ -177,7 +177,7 @@ function App() {
                   <div className="contact-icon">📧</div>
                   <div>
                     <h4>Email Us</h4>
-                    <p>hello@codelens.com</p>
+                    <p>hello@constlens.com</p>
                   </div>
                 </div>
                 <div className="contact-method">
@@ -222,7 +222,7 @@ function App() {
         <div className="container">
           <div className="footer-content">
             <div className="footer-section">
-              <h3>CodeLens</h3>
+              <h3>constlens</h3>
               <p>Transforming visions into powerful brands through innovative design, development, and strategic marketing.</p>
             </div>
             <div className="footer-section">
@@ -245,7 +245,7 @@ function App() {
             </div>
           </div>
           <div className="footer-bottom">
-            <p>&copy; 2024 codelens. All rights reserved.</p>
+            <p>&copy; 2024 constlens. All rights reserved.</p>
           </div>
         </div>
       </footer>
