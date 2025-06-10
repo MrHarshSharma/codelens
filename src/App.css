@@ -50,7 +50,7 @@ html {
 }
 
 .nav-logo h2 {
-  background: linear-gradient(135deg, #f8bbd9 0%, #e91e63 100%);
+  background: linear-gradient(135deg, #b39ddb 0%, #9575cd 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -72,7 +72,7 @@ html {
 }
 
 .nav-link:hover {
-  color: #f8bbd9;
+  color: #b39ddb;
 }
 
 .nav-link::after {
@@ -82,7 +82,7 @@ html {
   height: 2px;
   bottom: -5px;
   left: 0;
-  background: linear-gradient(135deg, #f8bbd9 0%, #e91e63 100%);
+  background: linear-gradient(135deg, #b39ddb 0%, #9575cd 100%);
   transition: width 0.3s ease;
 }
 
@@ -109,7 +109,7 @@ html {
   min-height: 100vh;
   display: flex;
   align-items: center;
-  background: linear-gradient(135deg, #f8bbd9 0%, #e91e63 100%);
+  background: linear-gradient(135deg, #b39ddb 0%, #9575cd 100%);
   position: relative;
   overflow: hidden;
 }
@@ -149,7 +149,7 @@ html {
 }
 
 .gradient-text {
-  background: linear-gradient(135deg, #ffcc02 0%, #ffa000 100%);
+  background: linear-gradient(135deg, #ffb74d 0%, #ff9800 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -168,7 +168,7 @@ html {
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, #ffcc02 0%, #ffa000 100%);
+  background: linear-gradient(135deg, #ffb74d 0%, #ff9800 100%);
   color: #333;
   border: none;
   padding: 15px 30px;
@@ -197,7 +197,7 @@ html {
 
 .btn-secondary:hover {
   background: white;
-  color: #f8bbd9;
+  color: #b39ddb;
 }
 
 .hero-visual {
@@ -263,7 +263,7 @@ html {
   font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 1rem;
-  background: linear-gradient(135deg, #f8bbd9 0%, #e91e63 100%);
+  background: linear-gradient(135deg, #b39ddb 0%, #9575cd 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -316,7 +316,7 @@ html {
 }
 
 .service-btn {
-  background: linear-gradient(135deg, #f8bbd9 0%, #e91e63 100%);
+  background: linear-gradient(135deg, #b39ddb 0%, #9575cd 100%);
   color: white;
   border: none;
   padding: 12px 24px;
@@ -328,7 +328,7 @@ html {
 
 .service-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(248, 187, 217, 0.4);
+  box-shadow: 0 5px 15px rgba(179, 157, 219, 0.4);
 }
 
 /* About Section */
@@ -364,7 +364,7 @@ html {
 .stat h3 {
   font-size: 2.5rem;
   font-weight: 700;
-  background: linear-gradient(135deg, #f8bbd9 0%, #e91e63 100%);
+  background: linear-gradient(135deg, #b39ddb 0%, #9575cd 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -377,7 +377,7 @@ html {
 }
 
 .about-image-placeholder {
-  background: linear-gradient(135deg, #f8bbd9 0%, #e91e63 100%);
+  background: linear-gradient(135deg, #b39ddb 0%, #9575cd 100%);
   border-radius: 20px;
   padding: 3rem;
   color: white;
@@ -442,7 +442,7 @@ html {
   font-size: 2rem;
   width: 60px;
   height: 60px;
-  background: linear-gradient(135deg, #f8bbd9 0%, #e91e63 100%);
+  background: linear-gradient(135deg, #b39ddb 0%, #9575cd 100%);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -485,7 +485,7 @@ html {
 .form-group select:focus,
 .form-group textarea:focus {
   outline: none;
-  border-color: #f8bbd9;
+  border-color: #b39ddb;
   background: white;
 }
 
@@ -508,7 +508,7 @@ html {
 }
 
 .footer-section h3 {
-  background: linear-gradient(135deg, #f8bbd9 0%, #e91e63 100%);
+  background: linear-gradient(135deg, #b39ddb 0%, #9575cd 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -536,7 +536,7 @@ html {
 }
 
 .footer-section ul li:hover {
-  color: #f8bbd9;
+  color: #b39ddb;
   cursor: pointer;
 }
 
@@ -551,7 +551,7 @@ html {
   justify-content: center;
   width: 40px;
   height: 40px;
-  background: linear-gradient(135deg, #f8bbd9 0%, #e91e63 100%);
+  background: linear-gradient(135deg, #b39ddb 0%, #9575cd 100%);
   border-radius: 50%;
   text-decoration: none;
   font-size: 1.2rem;
@@ -694,7 +694,7 @@ input:focus,
 select:focus,
 textarea:focus,
 a:focus {
-  outline: 2px solid #f8bbd9;
+  outline: 2px solid #b39ddb;
   outline-offset: 2px;
 }
 
