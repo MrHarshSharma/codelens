@@ -31,7 +31,7 @@ const Contact = () => {
         </div>
         <div className="contact-content">
           <div className="contact-info">
-            <div className="contact-item">
+            {/* <div className="contact-item">
               <div className="contact-avatar">
                 <span>📧</span>
               </div>
@@ -39,17 +39,17 @@ const Contact = () => {
                 <h4>Email Us</h4>
                 <p>hello@constlens.com</p>
               </div>
-            </div>
+            </div> */}
             <div className="contact-item">
               <div className="contact-avatar">
                 <span>📞</span>
               </div>
               <div className="contact-details">
                 <h4>Call Us</h4>
-                <p>+1 (555) 123-4567</p>
+                <a href="tel:+919665654326">+91 96656 54326</a><br/><a href="tel:+919568265034">+91 95682 65034</a>
               </div>
             </div>
-            <div className="contact-item">
+            {/* <div className="contact-item">
               <div className="contact-avatar">
                 <span>📍</span>
               </div>
@@ -57,14 +57,14 @@ const Contact = () => {
                 <h4>Visit Us</h4>
                 <p>123 Creative Street<br />Design City, DC 12345</p>
               </div>
-            </div>
+            </div> */}
             <div className="contact-item">
               <div className="contact-avatar">
                 <span>⏰</span>
               </div>
               <div className="contact-details">
                 <h4>Business Hours</h4>
-                <p>Mon - Fri: 9AM - 6PM<br />Sat: 10AM - 4PM</p>
+                <p>Everyday: 9AM - 6PM</p>
               </div>
             </div>
           </div>
