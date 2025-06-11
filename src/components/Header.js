@@ -8,7 +8,15 @@ const Header = () => {
     <header className="header">
       <div className="container">
         <div className="logo">
-          <h2>ConstLens</h2>
+          <img 
+            src="/logo.png" 
+            alt="Constlens Logo" 
+            className="logo-img"
+            width="150"
+            height="40"
+            loading="eager"
+            fetchpriority="high"
+          />
         </div>
         <nav className={`nav ${isMenuOpen ? 'nav-open' : ''}`}>
           <ul>

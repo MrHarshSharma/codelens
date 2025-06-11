@@ -7,7 +7,15 @@ const Footer = () => {
       <div className="container">
         <div className="footer-content">
           <div className="footer-section">
-            <h3>ConstLens</h3>
+            <img 
+              src="/logo.png" 
+              alt="Constlens Logo" 
+              className="logo-img"
+              width="150"
+              height="40"
+              loading="eager"
+              fetchpriority="high"
+            />
             <p>Building brands that matter. We help businesses find their unique path and create meaningful connections with their audience.</p>
             {/* <div className="social-links">
               <a href="#" className="social-link">
@@ -46,18 +54,19 @@ const Footer = () => {
             <h4>Contact Info</h4>
             <div className="contact-info">
               {/* <p>📧 hello@constlens.com</p> */}
-              <a href="tel:+919665654326">+91 96656 54326</a><a href="tel:+919568265034">+91 95682 65034</a>
+              <a href="tel:+919665654326">+91 96656 54326</a>
+              <a href="tel:+919568265034">+91 95682 65034</a>
 
               {/* <p>📍 123 Creative Street<br />Design City, DC 12345</p> */}
             </div>
           </div>
         </div>
         <div className="footer-bottom">
-          <p>&copy; 2024 ConstLens. All rights reserved.</p>
-          <div className="footer-links">
+          <p>&copy; {new Date().getFullYear()} ConstLens. All rights reserved.</p>
+          {/* <div className="footer-links">
             <a href="#">Privacy Policy</a>
             <a href="#">Terms of Service</a>
-          </div>
+          </div> */}
         </div>
       </div>
     </footer>

@@ -9,7 +9,7 @@ const About = () => {
           <div className="about-text">
             <h2>We're Brand <span className="highlight">Architects</span></h2>
             <p className="about-description">
-              At ConstLens, we believe every brand has a unique story waiting to be told. 
+              At Constlens, we believe every brand has a unique story waiting to be told. 
               We're passionate about helping businesses discover their authentic voice and 
               connect with their audience in meaningful ways.
             </p>

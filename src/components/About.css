@@ -142,6 +142,7 @@
   
   .about-description {
     font-size: 1.125rem;
+    text-align: justify;
   }
   
   .point {
@@ -167,7 +168,7 @@
 
 @media (max-width: 480px) {
   .team-avatars {
-    grid-template-columns: 1fr;
+    /* grid-template-columns: 1fr; */
     max-width: 200px;
   }
   
