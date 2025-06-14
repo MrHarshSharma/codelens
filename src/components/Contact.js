@@ -1,13 +1,18 @@
 import React, { useState } from 'react';
+import emailjs from '@emailjs/browser';
 import './Contact.css';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    phone: '',
     service: '',
     message: ''
   });
+  
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState('');
 
   const handleChange = (e) => {
     setFormData({
@@ -16,10 +21,49 @@ const Contact = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log('Form submitted:', formData);
+    setIsSubmitting(true);
+    setSubmitStatus('');
+
+    // EmailJS configuration
+    const serviceID = 'service_0f60y2d'; // You'll need to replace this
+    const templateID = 'template_hxjfn8i'; // You'll need to replace this
+    const publicKey = 'z2IJB9Etl8d-KK-Zs'; // You'll need to replace this
+
+    const templateParams = {
+      from_phone: formData.phone,
+      from_name: formData.name,
+      from_email: formData.email,
+      to_name: 'Constlens Team',
+      service_type: formData.service,
+      message: formData.message,
+      reply_to: formData.email,
+    };
+
+    try {
+      const response = await emailjs.send(
+        serviceID,
+        templateID,
+        templateParams,
+        publicKey
+      );
+      
+      console.log('SUCCESS!', response.status, response.text);
+      setSubmitStatus('success');
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        service: '',
+        message: ''
+      });
+    } catch (error) {
+      console.error('FAILED...', error);
+      setSubmitStatus('error');
+    }
+
+    setIsSubmitting(false);
   };
 
   return (
@@ -46,8 +90,7 @@ const Contact = () => {
               </div>
               <div className="contact-details">
                 <h4>Call Us</h4>
-                <a href="tel:+919665654326">+91 96656 54326</a>
-                <a href="tel:+919568265034">+91 95682 65034</a>
+                <a href="tel:+919665654326">+91 96656 54326</a><br/><a href="tel:+919568265034">+91 95682 65034</a>
               </div>
             </div>
             {/* <div className="contact-item">
@@ -71,6 +114,19 @@ const Contact = () => {
           </div>
           <div className="contact-form-container">
             <form className="contact-form" onSubmit={handleSubmit}>
+              {submitStatus === 'success' && (
+                <div className="alert alert-success">
+                  <span>✅</span>
+                  <p>Thank you! Your message has been sent successfully. We'll get back to you soon!</p>
+                </div>
+              )}
+              {submitStatus === 'error' && (
+                <div className="alert alert-error">
+                  <span>❌</span>
+                  <p>Sorry, there was an error sending your message. Please try again or call us directly.</p>
+                </div>
+              )}
+              
               <div className="form-group">
                 <input
                   type="text"
@@ -79,6 +135,7 @@ const Contact = () => {
                   value={formData.name}
                   onChange={handleChange}
                   required
+                  disabled={isSubmitting}
                 />
               </div>
               <div className="form-group">
@@ -89,6 +146,19 @@ const Contact = () => {
                   value={formData.email}
                   onChange={handleChange}
                   required
+                  disabled={isSubmitting}
+                />
+              </div>
+              <div className="form-group">
+                <input
+                  type="tel"
+                  name="phone"
+                  placeholder="Your Phone Number (optional)"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  disabled={isSubmitting}
+                  pattern="[0-9]{10}"
+                  title="Please enter a valid 10-digit phone number"
                 />
               </div>
               <div className="form-group">
@@ -97,6 +167,7 @@ const Contact = () => {
                   value={formData.service}
                   onChange={handleChange}
                   required
+                  disabled={isSubmitting}
                 >
                   <option value="">Select a Service</option>
                   <option value="logo-design">Logo Design</option>
@@ -114,10 +185,22 @@ const Contact = () => {
                   value={formData.message}
                   onChange={handleChange}
                   required
+                  disabled={isSubmitting}
                 ></textarea>
               </div>
-              <button type="submit" className="submit-btn">
-                Send Message
+              <button 
+                type="submit" 
+                className={`submit-btn ${isSubmitting ? 'submitting' : ''}`}
+                disabled={isSubmitting}
+              >
+                {isSubmitting ? (
+                  <>
+                    <span className="spinner"></span>
+                    Sending...
+                  </>
+                ) : (
+                  'Send Message'
+                )}
               </button>
             </form>
           </div>
