@@ -153,11 +153,12 @@ const Contact = () => {
                 <input
                   type="tel"
                   name="phone"
-                  placeholder="Your Phone Number (optional)"
+                  placeholder="Your Phone Number"
                   value={formData.phone}
                   onChange={handleChange}
                   disabled={isSubmitting}
                   pattern="[0-9]{10}"
+                  required
                   title="Please enter a valid 10-digit phone number"
                 />
               </div>
