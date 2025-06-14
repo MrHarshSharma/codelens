@@ -90,7 +90,7 @@ const Contact = () => {
               </div>
               <div className="contact-details">
                 <h4>Call Us</h4>
-                <a href="tel:+919665654326">+91 96656 54326</a><br/><a href="tel:+919568265034">+91 95682 65034</a>
+                <a href="tel:+919665654326">+91 96656 54326</a><a href="tel:+919568265034">+91 95682 65034</a>
               </div>
             </div>
             {/* <div className="contact-item">
@@ -114,19 +114,6 @@ const Contact = () => {
           </div>
           <div className="contact-form-container">
             <form className="contact-form" onSubmit={handleSubmit}>
-              {submitStatus === 'success' && (
-                <div className="alert alert-success">
-                  <span>✅</span>
-                  <p>Thank you! Your message has been sent successfully. We'll get back to you soon!</p>
-                </div>
-              )}
-              {submitStatus === 'error' && (
-                <div className="alert alert-error">
-                  <span>❌</span>
-                  <p>Sorry, there was an error sending your message. Please try again or call us directly.</p>
-                </div>
-              )}
-              
               <div className="form-group">
                 <input
                   type="text"
@@ -203,6 +190,19 @@ const Contact = () => {
                   'Send Message'
                 )}
               </button>
+              {submitStatus === 'success' && (
+                <div className="alert alert-success">
+                  <span>✅</span>
+                  <p>Thank you! Your message has been sent successfully. We'll get back to you soon!</p>
+                </div>
+              )}
+              {submitStatus === 'error' && (
+                <div className="alert alert-error">
+                  <span>❌</span>
+                  <p>Sorry, there was an error sending your message. Please try again or call us directly.</p>
+                </div>
+              )}
+              
             </form>
           </div>
         </div>

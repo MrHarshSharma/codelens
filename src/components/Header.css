@@ -69,17 +69,34 @@
   cursor: pointer;
   padding: 0;
   width: 30px;
-  height: 30px;
+  height: 24px;
   justify-content: space-between;
+  position: relative;
+  z-index: 1001;
 }
 
-.menu-toggle span {
+.menu-line {
   display: block;
-  height: 3px;
+  height: 2px;
   width: 100%;
   background: var(--text-primary);
-  border-radius: 3px;
+  border-radius: 2px;
   transition: all 0.3s ease;
+  transform-origin: center;
+}
+
+/* Cross animation when menu is open */
+.menu-toggle.menu-open .menu-line:nth-child(1) {
+  transform: translateY(11px) rotate(45deg);
+}
+
+.menu-toggle.menu-open .menu-line:nth-child(2) {
+  opacity: 0;
+  transform: scale(0);
+}
+
+.menu-toggle.menu-open .menu-line:nth-child(3) {
+  transform: translateY(-11px) rotate(-45deg);
 }
 
 /* Mobile Menu */

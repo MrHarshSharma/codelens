@@ -27,12 +27,13 @@ const Header = () => {
           </ul>
         </nav>
         <button 
-          className="menu-toggle"
+          className={`menu-toggle ${isMenuOpen ? 'menu-open' : ''}`}
           onClick={() => setIsMenuOpen(!isMenuOpen)}
+          aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
         >
-          <span></span>
-          <span></span>
-          <span></span>
+          <span className="menu-line"></span>
+          <span className="menu-line"></span>
+          <span className="menu-line"></span>
         </button>
       </div>
     </header>

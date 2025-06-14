@@ -40,6 +40,11 @@
   gap: 1rem;
 }
 
+.footer .contact-info{
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
 .social-link {
   width: 45px;
   height: 45px;
