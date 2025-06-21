@@ -68,8 +68,9 @@
 .hero-title {
   font-size: clamp(var(--text-4xl), 8vw, var(--text-7xl));
   font-weight: 900;
-  line-height: 0.95;
-  letter-spacing: -0.05em;
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.1;
+  letter-spacing: -0.04em;
   margin-bottom: var(--space-8);
   animation: artisticSlideUp 1s ease-out 0.4s both;
   color: var(--text-primary);
@@ -120,6 +121,7 @@
   border-radius: var(--radius-organic);
   font-size: var(--text-lg);
   font-weight: 600;
+  font-family: 'Montserrat', sans-serif;
   cursor: pointer;
   transition: all var(--transition-elastic);
   text-decoration: none;
@@ -161,6 +163,7 @@
   border-radius: var(--radius-organic);
   font-size: var(--text-lg);
   font-weight: 600;
+  font-family: 'Montserrat', sans-serif;
   cursor: pointer;
   transition: all var(--transition-elastic);
   text-decoration: none;
