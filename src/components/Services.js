@@ -1,5 +1,6 @@
 import React from 'react';
 import './Services.css';
+import { trackServiceInterest, trackCTAClick } from '../utils/analytics';
 
 const Services = () => {
   const services = [
@@ -29,6 +30,27 @@ const Services = () => {
     }
   ];
 
+  const handleServiceCardClick = (serviceName) => {
+    trackServiceInterest(serviceName);
+  };
+
+  const handleLearnMoreClick = (serviceName) => {
+    trackCTAClick('Learn More', 'services_section', serviceName);
+    
+    // Smooth scroll to contact section with proper offset
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      const headerHeight = window.innerWidth <= 768 ? 70 : 80; // Match CSS variable
+      const elementPosition = contactSection.getBoundingClientRect().top + window.pageYOffset;
+      const offsetPosition = elementPosition - headerHeight;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  };
+
   return (
     <section id="services" className="services">
       <div className="container">
@@ -38,7 +60,11 @@ const Services = () => {
         </div>
         <div className="services-grid">
           {services.map((service, index) => (
-            <div key={index} className="service-card">
+            <div 
+              key={index} 
+              className="service-card"
+              onClick={() => handleServiceCardClick(service.title)}
+            >
               <div className="service-icon">
                 <div className="service-avatar">
                   <span>{service.icon}</span>
@@ -54,7 +80,15 @@ const Services = () => {
                   </li>
                 ))}
               </ul>
-              <button className="service-btn">Learn More</button>
+              <button 
+                className="service-btn"
+                onClick={(e) => {
+                  e.stopPropagation(); // Prevent card click event
+                  handleLearnMoreClick(service.title);
+                }}
+              >
+                Learn More
+              </button>
             </div>
           ))}
         </div>

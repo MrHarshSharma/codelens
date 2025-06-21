@@ -33,6 +33,7 @@ body {
   --gradient-primary: linear-gradient(135deg, #667EEA 0%, #764BA2 100%);
   --gradient-secondary: linear-gradient(135deg, #F093FB 0%, #F5576C 100%);
   --gradient-accent: linear-gradient(135deg, #4FD1C7 0%, #81E6D9 100%);
+  --header-height: 80px; /* Define header height for consistent use */
 }
 
 .App {
@@ -44,6 +45,16 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
+}
+
+/* Fix for fixed header - Add scroll offset to all sections */
+section {
+  scroll-margin-top: var(--header-height);
+}
+
+/* Also add scroll offset to hero section */
+.hero {
+  scroll-margin-top: var(--header-height);
 }
 
 /* Typography */
@@ -130,6 +141,10 @@ p {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+  :root {
+    --header-height: 70px; /* Slightly smaller header on mobile */
+  }
+  
   .container {
     padding: 0 15px;
   }

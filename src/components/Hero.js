@@ -1,7 +1,15 @@
 import React from 'react';
 import './Hero.css';
+import { scrollToSection } from '../utils/smoothScroll';
+import { trackCTAClick } from '../utils/analytics';
 
 const Hero = () => {
+  const handleGetStartedClick = (e) => {
+    e.preventDefault();
+    trackCTAClick('Get Started', 'hero_section', 'services');
+    scrollToSection('services');
+  };
+
   return (
     <section id="home" className="hero">
       <div className="container">
@@ -27,7 +35,13 @@ const Hero = () => {
               </div>
             </div>
             <div className="hero-buttons">
-              <a href="#services" className="btn-primary">Get Started</a>
+              <a 
+                href="#services" 
+                className="btn-primary"
+                onClick={handleGetStartedClick}
+              >
+                Get Started
+              </a>
               {/* <button className="btn-secondary">View Our Work</button> */}
             </div>
           </div>
