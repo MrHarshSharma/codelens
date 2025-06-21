@@ -34,7 +34,7 @@ const Header = () => {
             alt="prysmgrid Logo" 
             className="logo-img"
             width="150"
-            height="50"
+            height="55"
             loading="eager"
             fetchpriority="high"
           />
