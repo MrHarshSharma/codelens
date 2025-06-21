@@ -6,27 +6,27 @@ const Services = () => {
   const services = [
     {
       icon: '🎨',
-      title: 'Logo Design',
-      description: 'Craft memorable logos that capture your brand essence and leave lasting impressions.',
-      features: ['Custom Design', 'Brand Guidelines', 'Vector Files', 'Unlimited Revisions']
+      title: 'Creative Design',
+      description: 'Transform your vision into stunning visuals that captivate and inspire your audience with artistic flair.',
+      features: ['Brand Identity', 'UI/UX Design', 'Visual Storytelling', 'Creative Direction']
     },
     {
       icon: '💻',
-      title: 'Website & App Development',
-      description: 'Build responsive, user-friendly websites and mobile apps that drive conversions.',
-      features: ['Responsive Design', 'Modern UI/UX', 'Fast Performance', 'SEO Optimized']
+      title: 'Web Development',
+      description: 'Build lightning-fast, responsive websites that look amazing and perform flawlessly across all devices.',
+      features: ['Modern Frameworks', 'Mobile-First Design', 'Performance Optimized', 'SEO Ready']
     },
     {
-      icon: '📱',
-      title: 'Social Media Presence',
-      description: 'Amplify your brand voice across social platforms with engaging content strategies.',
-      features: ['Content Strategy', 'Post Scheduling', 'Community Management', 'Analytics Tracking']
+      icon: '🚀',
+      title: 'Digital Strategy',
+      description: 'Launch your brand into the digital stratosphere with smart, data-driven strategies that deliver results.',
+      features: ['Growth Planning', 'Market Analysis', 'User Research', 'Conversion Optimization']
     },
     {
-      icon: '📸',
-      title: 'Product Photography',
-      description: 'Showcase your products with stunning visuals that convert browsers into buyers.',
-      features: ['Professional Shoots', 'Lifestyle Photos', 'E-commerce Ready', 'Brand Consistency']
+      icon: '✨',
+      title: 'Brand Experience',
+      description: 'Create magical brand experiences that turn customers into lifelong advocates and brand ambassadors.',
+      features: ['Brand Storytelling', 'Content Strategy', 'Social Presence', 'Community Building']
     }
   ];
 
@@ -35,12 +35,12 @@ const Services = () => {
   };
 
   const handleLearnMoreClick = (serviceName) => {
-    trackCTAClick('Learn More', 'services_section', serviceName);
+    trackCTAClick('✨ Get Started', 'services_section', serviceName);
     
     // Smooth scroll to contact section with proper offset
     const contactSection = document.getElementById('contact');
     if (contactSection) {
-      const headerHeight = window.innerWidth <= 768 ? 70 : 80; // Match CSS variable
+      const headerHeight = window.innerWidth <= 768 ? 70 : 64;
       const elementPosition = contactSection.getBoundingClientRect().top + window.pageYOffset;
       const offsetPosition = elementPosition - headerHeight;
 
@@ -53,10 +53,17 @@ const Services = () => {
 
   return (
     <section id="services" className="services">
+      <div className="services-decoration"></div>
+      <div className="services-decoration"></div>
+      <div className="services-decoration"></div>
+      
       <div className="container">
         <div className="services-header">
-          <h2>Our <span className="highlight">Services</span></h2>
-          <p>Comprehensive solutions to elevate your brand and expand your reach</p>
+          <div className="services-badge">
+            <span>🚀 What We Create</span>
+          </div>
+          <h2>Our <span className="text-gradient">Creative</span> Services</h2>
+          <p>We blend artistry with technology to create digital experiences that inspire, engage, and perform beautifully</p>
         </div>
         <div className="services-grid">
           {services.map((service, index) => (
@@ -70,25 +77,31 @@ const Services = () => {
                   <span>{service.icon}</span>
                 </div>
               </div>
-              <h3>{service.title}</h3>
-              <p className="service-description">{service.description}</p>
-              <ul className="service-features">
-                {service.features.map((feature, featureIndex) => (
-                  <li key={featureIndex}>
-                    <span className="feature-check">✓</span>
-                    {feature}
-                  </li>
-                ))}
-              </ul>
-              <button 
-                className="service-btn"
-                onClick={(e) => {
-                  e.stopPropagation(); // Prevent card click event
-                  handleLearnMoreClick(service.title);
-                }}
-              >
-                Learn More
-              </button>
+              
+              <div className="service-card-content">
+                <div>
+                  <h3>{service.title}</h3>
+                  <p className="service-description">{service.description}</p>
+                  <ul className="service-features">
+                    {service.features.map((feature, featureIndex) => (
+                      <li key={featureIndex}>
+                        <span className="feature-check">✓</span>
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                
+                <button 
+                  className="service-btn"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    handleLearnMoreClick(service.title);
+                  }}
+                >
+                  ✨ Get Started
+                </button>
+              </div>
             </div>
           ))}
         </div>

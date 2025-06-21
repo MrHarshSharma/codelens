@@ -1,72 +1,117 @@
 import React from 'react';
 import './Hero.css';
-import { scrollToSection } from '../utils/smoothScroll';
-import { trackCTAClick } from '../utils/analytics';
+import { trackCTAClick, trackHeroInteraction } from '../utils/analytics';
 
 const Hero = () => {
-  const handleGetStartedClick = (e) => {
-    e.preventDefault();
-    trackCTAClick('Get Started', 'hero_section', 'services');
-    scrollToSection('services');
+  const handleStartProjectClick = () => {
+    trackCTAClick('✨ Start Your Project', 'hero_section', 'primary_cta');
+    
+    // Smooth scroll to contact section
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      const headerHeight = window.innerWidth <= 768 ? 70 : 64;
+      const elementPosition = contactSection.getBoundingClientRect().top + window.pageYOffset;
+      const offsetPosition = elementPosition - headerHeight;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  };
+
+  
+
+  const handleShowcaseInteraction = (cardName) => {
+    trackHeroInteraction('showcase_card_hover', cardName);
   };
 
   return (
     <section id="home" className="hero">
+      <div className="hero-decoration"></div>
+      <div className="hero-decoration"></div>
+      <div className="hero-decoration"></div>
+      
       <div className="container">
-        <div className="hero-content">
-          <div className="hero-text">
-            <h1>Building Brands That <span className="highlight">Matter</span></h1>
-            <p className="hero-subtitle">
-              We help brands find their unique path, expand their customer reach, 
-              and create a powerful social media presence that drives results.
-            </p>
-            <div className="hero-stats">
-              <div className="stat">
-                <span className="stat-number">500+</span>
-                <span className="stat-label">Brands Built</span>
-              </div>
-              <div className="stat">
-                <span className="stat-number">2M+</span>
-                <span className="stat-label">Reach Increased</span>
-              </div>
-              <div className="stat">
-                <span className="stat-number">98%</span>
-                <span className="stat-label">Client Satisfaction</span>
-              </div>
+        <div className="hero-container">
+          <div className="hero-content">
+            <div className="hero-badge">
+              <span>🎨 Creative Digital Studio</span>
             </div>
-            <div className="hero-buttons">
-              <a 
-                href="#services" 
-                className="btn-primary"
-                onClick={handleGetStartedClick}
-              >
-                Get Started
-              </a>
-              {/* <button className="btn-secondary">View Our Work</button> */}
+            
+            <h1 className="hero-title">
+              We Create <span className="gradient-text">Beautiful</span><br />
+              Digital Experiences
+            </h1>
+            
+            <p className="hero-description">
+              Transform your vision into stunning digital realities with our artistic approach to design and development. We craft experiences that inspire, engage, and convert.
+            </p>
+           
+            
+            <div className="hero-features">
+              <div className="hero-feature">
+                <span className="hero-feature-icon">🚀</span>
+                <span>Fast & Modern</span>
+              </div>
+              <div className="hero-feature">
+                <span className="hero-feature-icon">💡</span>
+                <span>Creative Solutions</span>
+              </div>
+              <div className="hero-feature">
+                <span className="hero-feature-icon">🎯</span>
+                <span>Results Driven</span>
+              </div>
             </div>
           </div>
+          
           <div className="hero-visual">
-            <div className="avatar-group">
-              <div className="avatar avatar-1">
-                <div className="avatar-icon">🎨</div>
+            <div className="hero-showcase">
+              <div 
+                className="showcase-card"
+                onMouseEnter={() => handleShowcaseInteraction('Design')}
+              >
+                <div className="showcase-icon">🎨</div>
+                <div className="showcase-title">Design</div>
+                <div className="showcase-subtitle">Beautiful & Functional</div>
               </div>
-              <div className="avatar avatar-2">
-                <div className="avatar-icon">📱</div>
+              
+              <div 
+                className="showcase-card"
+                onMouseEnter={() => handleShowcaseInteraction('Development')}
+              >
+                <div className="showcase-icon">💻</div>
+                <div className="showcase-title">Development</div>
+                <div className="showcase-subtitle">Fast & Reliable</div>
               </div>
-              <div className="avatar avatar-3">
-                <div className="avatar-icon">📸</div>
+              
+              <div 
+                className="showcase-card"
+                onMouseEnter={() => handleShowcaseInteraction('Launch')}
+              >
+                <div className="showcase-icon">🚀</div>
+                <div className="showcase-title">Launch</div>
+                <div className="showcase-subtitle">Ready to Scale</div>
               </div>
-              <div className="avatar avatar-4">
-                <div className="avatar-icon">🚀</div>
+              
+              <div 
+                className="showcase-card"
+                onMouseEnter={() => handleShowcaseInteraction('Growth')}
+              >
+                <div className="showcase-icon">📈</div>
+                <div className="showcase-title">Growth</div>
+                <div className="showcase-subtitle">Data-Driven Results</div>
               </div>
             </div>
-            <div className="floating-elements">
-              <div className="floating-card">
-                <span>Brand Strategy</span>
-              </div>
-              <div className="floating-card">
-                <span>Digital Growth</span>
-              </div>
+             
+            <div className="hero-actions">
+              <button 
+                className="hero-btn-primary"
+                onClick={handleStartProjectClick}
+              >
+                <span>✨ Start Your Project</span>
+              </button>
+           
             </div>
           </div>
         </div>

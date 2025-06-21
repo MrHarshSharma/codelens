@@ -24,9 +24,9 @@
   "categories": ["business", "design", "marketing"],
   "screenshots": [
     {
-      "src": "og-image.jpg",
+      "src": "logo.png",
       "sizes": "1280x720",
-      "type": "image/jpeg"
+      "type": "image/png"
     }
   ]
 }

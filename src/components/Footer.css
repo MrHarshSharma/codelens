@@ -42,7 +42,7 @@
 
 .footer .contact-info{
   display: flex;
-  flex-direction: column;
+  flex-direction: column !important;
   gap: 0.5rem;
 }
 .social-link {

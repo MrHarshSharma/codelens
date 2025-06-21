@@ -1,69 +1,129 @@
 import React from 'react';
 import './About.css';
+import { trackAboutInteraction, trackCTAClick } from '../utils/analytics';
 
 const About = () => {
+  const handleValueInteraction = (valueName) => {
+    trackAboutInteraction('value_hover', valueName);
+  };
+
+  const handleGalleryInteraction = (itemName) => {
+    trackAboutInteraction('gallery_hover', itemName);
+  };
+
+ 
+
   return (
     <section id="about" className="about">
+      <div className="about-decoration"></div>
+      <div className="about-decoration"></div>
+      
       <div className="container">
-        <div className="about-content">
-          <div className="about-text">
-            <h2>We're Brand <span className="highlight">Architects</span></h2>
-            <p className="about-description">
-              At prysmgrid, we believe every brand has a unique story waiting to be told. 
-              We're passionate about helping businesses discover their authentic voice and 
-              connect with their audience in meaningful ways.
-            </p>
-            <div className="about-points">
-              <div className="point">
-                <div className="point-icon">🎯</div>
-                <div className="point-text">
-                  <h4>Strategic Approach</h4>
-                  <p>We dive deep into your brand's essence to create authentic connections</p>
-                </div>
+        <div className="about-container">
+          
+          
+          <div className="about-visual">
+            {/* <div className="creative-gallery">
+              <div 
+                className="gallery-item"
+                onMouseEnter={() => handleGalleryInteraction('Design')}
+              >
+                🎨
               </div>
-              <div className="point">
-                <div className="point-icon">💡</div>
-                <div className="point-text">
-                  <h4>Creative Excellence</h4>
-                  <p>Our designs speak volumes and leave lasting impressions</p>
-                </div>
+              <div 
+                className="gallery-item"
+                onMouseEnter={() => handleGalleryInteraction('Code')}
+              >
+                💻
               </div>
-              <div className="point">
-                <div className="point-icon">📈</div>
-                <div className="point-text">
-                  <h4>Measurable Results</h4>
-                  <p>We deliver growth that you can see and measure</p>
-                </div>
+              <div 
+                className="gallery-item"
+                onMouseEnter={() => handleGalleryInteraction('Strategy')}
+              >
+                🎯
+              </div>
+              <div 
+                className="gallery-item"
+                onMouseEnter={() => handleGalleryInteraction('Innovation')}
+              >
+                ⚡
+              </div>
+              <div 
+                className="gallery-item"
+                onMouseEnter={() => handleGalleryInteraction('Growth')}
+              >
+                📈
+              </div>
+              <div 
+                className="gallery-item"
+                onMouseEnter={() => handleGalleryInteraction('Success')}
+              >
+                🏆
+              </div>
+            </div> */}
+            
+            {/* <div className="team-highlight">
+              <div className="team-avatars">
+                <div className="team-avatar">🎨</div>
+                <div className="team-avatar">💻</div>
+                <div className="team-avatar">🚀</div>
+              </div>
+              <div className="team-text">Creative Team</div>
+            </div> */}
+
+            <div className="about-values">
+              <div 
+                className="value-item"
+                onMouseEnter={() => handleValueInteraction('Creative Vision')}
+              >
+                <div className="value-icon">🎨</div>
+                <div className="value-title">Creative Vision</div>
+                <div className="value-description">We see beyond the ordinary to create extraordinary digital experiences</div>
+              </div>
+              
+              <div 
+                className="value-item"
+                onMouseEnter={() => handleValueInteraction('Lightning Fast')}
+              >
+                <div className="value-icon">⚡</div>
+                <div className="value-title">Lightning Fast</div>
+                <div className="value-description">Optimized performance that keeps your audience engaged and coming back</div>
+              </div>
+              
+              <div 
+                className="value-item"
+                onMouseEnter={() => handleValueInteraction('Future Ready')}
+              >
+                <div className="value-icon">🚀</div>
+                <div className="value-title">Future Ready</div>
+                <div className="value-description">Built with tomorrow's technology, designed for today's needs</div>
+              </div>
+              
+              <div 
+                className="value-item"
+                onMouseEnter={() => handleValueInteraction('Smart Solutions')}
+              >
+                <div className="value-icon">🧠</div>
+                <div className="value-title">Smart Solutions</div>
+                <div className="value-description">Intelligent design decisions backed by data and user insights</div>
               </div>
             </div>
           </div>
-          <div className="about-visual">
-            <div className="team-avatars">
-              <div className="team-member">
-                <div className="member-avatar">
-                  <div className="avatar-icon">👩‍🎨</div>
-                </div>
-                <span className="member-role">Creative Director</span>
-              </div>
-              <div className="team-member">
-                <div className="member-avatar">
-                  <div className="avatar-icon">👨‍💻</div>
-                </div>
-                <span className="member-role">Tech Lead</span>
-              </div>
-              <div className="team-member">
-                <div className="member-avatar">
-                  <div className="avatar-icon">👩‍💼</div>
-                </div>
-                <span className="member-role">Brand Strategist</span>
-              </div>
-              <div className="team-member">
-                <div className="member-avatar">
-                  <div className="avatar-icon">👨‍📷</div>
-                </div>
-                <span className="member-role">Visual Artist</span>
-              </div>
+
+          <div className="about-content">
+            <div className="about-badge">
+              <span>🎨 Our Creative Process</span>
             </div>
+            
+            <h2>We're Passionate <span className="text-gradient">Creators</span> Building Digital Magic</h2>
+            
+            <p className="about-description">
+              Our team combines artistic vision with technical expertise to create digital experiences that don't just look beautiful—they tell stories, evoke emotions, and drive meaningful results for your business.
+            </p>
+            
+          
+            
+           
           </div>
         </div>
       </div>

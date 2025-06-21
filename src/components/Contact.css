@@ -78,7 +78,7 @@
 }
 
 .contact-details a {
-  color: var(--primary-color);
+  color: var(--primary-color) !important;
   text-decoration: none;
   transition: all 0.3s ease;
 }
@@ -274,7 +274,7 @@
 
 @media (max-width: 768px) {
   .contact {
-    padding: 50px 0;
+    padding: calc(var(--header-height) + var(--space-8)) 0 var(--space-20);
   }
   
   .contact-header {
@@ -295,20 +295,57 @@
   }
   
   .contact-info {
-    gap: 1.5rem;
+    display: flex;
+    flex-direction: row !important;
+    gap: 1rem;
+    justify-content: space-between;
   }
   
   .contact-item {
-    padding: 1.25rem;
+    flex: 1;
+    padding: 1.5rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+    min-height: 140px;
   }
   
   .contact-avatar {
     width: 50px;
     height: 50px;
+    flex-shrink: 0;
   }
   
   .contact-avatar span {
     font-size: 1.25rem;
+  }
+  
+  .contact-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .contact-details h4 {
+    margin-bottom: 0;
+    font-size: 1rem;
+    text-align: center;
+  }
+  
+  .contact-details p,
+  .contact-details a {
+    font-size: 0.875rem;
+    text-align: center;
+    margin: 0;
+    line-height: 1.4;
+   
+  }
+  
+  .contact-details a {
+    display: block;
   }
   
   .contact-form-container {
@@ -317,10 +354,37 @@
 }
 
 @media (max-width: 480px) {
+  .contact {
+    padding: calc(var(--header-height) + var(--space-6)) 0 var(--space-16);
+  }
+  
+  .contact-info {
+    flex-direction: row;
+    gap: 0.75rem;
+  }
+  
   .contact-item {
-    flex-direction: column;
-    text-align: center;
-    gap: 1rem;
+    padding: 1.25rem 0.75rem;
+    min-height: 130px;
+    gap: 0.75rem;
+  }
+  
+  .contact-avatar {
+    width: 45px;
+    height: 45px;
+  }
+  
+  .contact-avatar span {
+    font-size: 1.125rem;
+  }
+  
+  .contact-details h4 {
+    font-size: 0.9rem;
+  }
+  
+  .contact-details p,
+  .contact-details a {
+    font-size: 0.8rem;
   }
   
   .contact-form-container {
@@ -334,7 +398,6 @@
   }
   
   .alert {
-    /* flex-direction: column; */
     text-align: center;
     gap: 0.5rem;
   }

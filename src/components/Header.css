@@ -1,5 +1,5 @@
 .header {
-  background: var(--background-white);
+  background: #fff;
   box-shadow: var(--shadow-soft);
   position: fixed;
   top: 0;
@@ -7,6 +7,7 @@
   right: 0;
   z-index: 1000;
   transition: all 0.3s ease;
+  height: 4rem; /* 64px - matches CSS variable */
 }
 
 .header .container {
@@ -14,6 +15,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 1rem 20px;
+  height: 100%;
 }
 
 .logo h2 {
@@ -101,6 +103,10 @@
 
 /* Mobile Menu */
 @media (max-width: 768px) {
+  .header {
+    height: 4.375rem; /* 70px - matches mobile calculations */
+  }
+  
   .menu-toggle {
     display: flex;
   }
@@ -110,12 +116,13 @@
     top: 100%;
     left: 0;
     right: 0;
-    background: var(--background-white);
+    background: #fff;
     box-shadow: var(--shadow-soft);
     transform: translateY(-100%);
     opacity: 0;
     visibility: hidden;
     transition: all 0.3s ease;
+    z-index: 999; /* Ensure mobile menu stays below header but above content */
   }
 
   .nav-open {

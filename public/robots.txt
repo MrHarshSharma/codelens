@@ -14,4 +14,4 @@ Disallow: /*.xml$
 Crawl-delay: 10
 
 # Sitemap
-Sitemap: https://consttlens.vercel.app/sitemap.xml
+Sitemap: https://prysmgrid.com/sitemap.xml

@@ -34,6 +34,28 @@ export const trackServiceInterest = (serviceName) => {
   console.log(`Service interest tracked: ${serviceName}`);
 };
 
+// Track hero section interactions
+export const trackHeroInteraction = (interactionType, elementName) => {
+  // Uncomment when Firebase is installed
+  // logEvent(analytics, 'hero_interaction', {
+  //   interaction_type: interactionType,
+  //   element_name: elementName,
+  //   section: 'hero'
+  // });
+  console.log(`Hero interaction tracked: ${interactionType} on ${elementName}`);
+};
+
+// Track about section interactions
+export const trackAboutInteraction = (interactionType, elementName) => {
+  // Uncomment when Firebase is installed
+  // logEvent(analytics, 'about_interaction', {
+  //   interaction_type: interactionType,
+  //   element_name: elementName,
+  //   section: 'about'
+  // });
+  console.log(`About interaction tracked: ${interactionType} on ${elementName}`);
+};
+
 // Track phone number clicks
 export const trackPhoneClick = (phoneNumber) => {
   // Uncomment when Firebase is installed
