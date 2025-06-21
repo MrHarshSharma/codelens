@@ -8,11 +8,11 @@ const Footer = () => {
         <div className="footer-content">
           <div className="footer-section">
             <img 
-              src="/logo.png" 
-              alt="Constlens Logo" 
+              src="/transparent_white_logo.png" 
+              alt="prysmgrid Logo" 
               className="logo-img"
               width="150"
-              height="40"
+              height="50"
               loading="eager"
               fetchpriority="high"
             />
@@ -53,7 +53,7 @@ const Footer = () => {
           <div className="footer-section">
             <h4>Contact Info</h4>
             <div className="contact-info">
-              {/* <p>📧 hello@constlens.com</p> */}
+              {/* <p>📧 hello@prysmgrid.com</p> */}
               <a href="tel:+919665654326">+91 96656 54326</a>
               <a href="tel:+919568265034">+91 95682 65034</a>
 
@@ -62,7 +62,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="footer-bottom">
-          <p>&copy; {new Date().getFullYear()} ConstLens. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} prysmgrid. All rights reserved.</p>
           {/* <div className="footer-links">
             <a href="#">Privacy Policy</a>
             <a href="#">Terms of Service</a>

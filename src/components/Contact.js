@@ -35,7 +35,7 @@ const Contact = () => {
       from_phone: formData.phone,
       from_name: formData.name,
       from_email: formData.email,
-      to_name: 'Constlens Team',
+      to_name: 'prysmgrid Team',
       service_type: formData.service,
       message: formData.message,
       reply_to: formData.email,

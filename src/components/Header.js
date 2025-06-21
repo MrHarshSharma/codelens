@@ -10,10 +10,10 @@ const Header = () => {
         <div className="logo">
           <img 
             src="/logo.png" 
-            alt="Constlens Logo" 
+            alt="prysmgrid Logo" 
             className="logo-img"
             width="150"
-            height="40"
+            height="50"
             loading="eager"
             fetchpriority="high"
           />
