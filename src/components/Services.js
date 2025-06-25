@@ -1,111 +1,104 @@
 import React from 'react';
 import './Services.css';
+import Avatar3D from './Avatar3D';
 import { trackServiceInterest, trackCTAClick } from '../utils/analytics';
 
 const Services = () => {
   const services = [
     {
-      icon: '🎨',
-      title: 'Creative Design',
-      description: 'Transform your vision into stunning visuals that captivate and inspire your audience with artistic flair.',
-      features: ['Brand Identity', 'UI/UX Design', 'Visual Storytelling', 'Creative Direction']
+      type: 'designer',
+      title: 'Brand Identity Design',
+      description: 'Create memorable visual identities that capture your brand essence and resonate with your target audience.',
+      features: ['Logo Design', 'Brand Guidelines', 'Visual Systems', 'Color Psychology']
     },
     {
-      icon: '💻',
-      title: 'Web Development',
-      description: 'Build lightning-fast, responsive websites that look amazing and perform flawlessly across all devices.',
-      features: ['Modern Frameworks', 'Mobile-First Design', 'Performance Optimized', 'SEO Ready']
-    },
-    {
-      icon: '🚀',
+      type: 'strategist',
       title: 'Digital Strategy',
-      description: 'Launch your brand into the digital stratosphere with smart, data-driven strategies that deliver results.',
-      features: ['Growth Planning', 'Market Analysis', 'User Research', 'Conversion Optimization']
+      description: 'Develop comprehensive digital strategies that align with your business goals and market opportunities.',
+      features: ['Market Research', 'Competitor Analysis', 'Strategic Planning', 'ROI Optimization']
     },
     {
-      icon: '✨',
-      title: 'Brand Experience',
-      description: 'Create magical brand experiences that turn customers into lifelong advocates and brand ambassadors.',
-      features: ['Brand Storytelling', 'Content Strategy', 'Social Presence', 'Community Building']
+      type: 'developer',
+      title: 'Web Development',
+      description: 'Build fast, responsive, and user-friendly websites that convert visitors into customers.',
+      features: ['Custom Development', 'Performance Optimization', 'Mobile Responsive', 'SEO Ready']
+    },
+    {
+      type: 'marketer',
+      title: 'Marketing Campaigns',
+      description: 'Execute data-driven marketing campaigns that amplify your brand and drive measurable results.',
+      features: ['Social Media', 'Content Marketing', 'PPC Advertising', 'Analytics & Insights']
     }
   ];
 
-  const handleServiceCardClick = (serviceName) => {
-    trackServiceInterest(serviceName);
+  const handleServiceInteraction = (serviceName) => {
+    trackServiceInterest(serviceName, 'services_section', 'hover_interaction');
   };
 
-  const handleLearnMoreClick = (serviceName) => {
-    trackCTAClick('✨ Get Started', 'services_section', serviceName);
-    
-    // Smooth scroll to contact section with proper offset
-    const contactSection = document.getElementById('contact');
-    if (contactSection) {
-      const headerHeight = window.innerWidth <= 768 ? 70 : 64;
-      const elementPosition = contactSection.getBoundingClientRect().top + window.pageYOffset;
-      const offsetPosition = elementPosition - headerHeight;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth'
-      });
-    }
+  const handleGetStartedClick = (serviceName) => {
+    trackCTAClick('Get Started', 'services_section', serviceName);
   };
 
   return (
     <section id="services" className="services">
-      <div className="services-decoration"></div>
-      <div className="services-decoration"></div>
-      <div className="services-decoration"></div>
-      
       <div className="container">
         <div className="services-header">
           <div className="services-badge">
-            <span>🚀 What We Create</span>
+            <span>⚡</span>
+            Our Services
           </div>
-          <h2>Our <span className="text-gradient">Creative</span> Services</h2>
-          <p>We blend artistry with technology to create digital experiences that inspire, engage, and perform beautifully</p>
+          <h2>Transforming Ideas Into <span className="text-gradient">Extraordinary Brands</span></h2>
+          <p>
+            We offer a comprehensive suite of branding and digital services designed to elevate 
+            your business and create lasting connections with your audience.
+          </p>
         </div>
+        
         <div className="services-grid">
           {services.map((service, index) => (
             <div 
               key={index} 
               className="service-card"
-              onClick={() => handleServiceCardClick(service.title)}
+              onMouseEnter={() => handleServiceInteraction(service.title)}
             >
               <div className="service-icon">
-                <div className="service-avatar">
-                  <span>{service.icon}</span>
-                </div>
+                <Avatar3D 
+                  type={service.type}
+                  size="medium"
+                  animated={true}
+                  interactive={false}
+                />
               </div>
               
               <div className="service-card-content">
-                <div>
-                  <h3>{service.title}</h3>
-                  <p className="service-description">{service.description}</p>
-                  <ul className="service-features">
-                    {service.features.map((feature, featureIndex) => (
-                      <li key={featureIndex}>
-                        <span className="feature-check">✓</span>
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+                <h3>{service.title}</h3>
+                <p className="service-description">{service.description}</p>
+                
+                <ul className="service-features">
+                  {service.features.map((feature, featureIndex) => (
+                    <li key={featureIndex}>
+                      <span className="feature-check">✓</span>
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
                 
                 <button 
                   className="service-btn"
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    handleLearnMoreClick(service.title);
-                  }}
+                  onClick={() => handleGetStartedClick(service.title)}
                 >
-                  ✨ Get Started
+                  Get Started
                 </button>
               </div>
             </div>
           ))}
         </div>
       </div>
+      
+      {/* Floating decorative elements */}
+      <div className="services-decoration"></div>
+      <div className="services-decoration"></div>
+      <div className="services-decoration"></div>
     </section>
   );
 };

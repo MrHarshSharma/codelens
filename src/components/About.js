@@ -1,132 +1,90 @@
 import React from 'react';
 import './About.css';
-import { trackAboutInteraction, trackCTAClick } from '../utils/analytics';
+import Team3D from './Team3D';
+import { trackCTAClick } from '../utils/analytics';
 
 const About = () => {
-  const handleValueInteraction = (valueName) => {
-    trackAboutInteraction('value_hover', valueName);
+  const handleLearnMoreClick = () => {
+    trackCTAClick('Learn More About Us', 'about_section', 'team_showcase');
   };
-
-  const handleGalleryInteraction = (itemName) => {
-    trackAboutInteraction('gallery_hover', itemName);
-  };
-
- 
 
   return (
     <section id="about" className="about">
-      <div className="about-decoration"></div>
-      <div className="about-decoration"></div>
-      
       <div className="container">
         <div className="about-container">
-          
+          <div className="about-content">
+            
+            
+            <div className="about-values">
+              <div className="value-item">
+                <div className="value-icon">
+                  <span>🎯</span>
+                </div>
+                <div>
+                  <h3 className="value-title">Strategic Focus</h3>
+                  <p className="value-description">Every decision backed by research and strategic thinking</p>
+                </div>
+              </div>
+              
+              <div className="value-item">
+                <div className="value-icon">
+                  <span>✨</span>
+                </div>
+                <div>
+                  <h3 className="value-title">Creative Excellence</h3>
+                  <p className="value-description">Award-winning designs that captivate and inspire</p>
+                </div>
+              </div>
+              
+              <div className="value-item">
+                <div className="value-icon">
+                  <span>🚀</span>
+                </div>
+                <div>
+                  <h3 className="value-title">Innovation First</h3>
+                  <p className="value-description">Cutting-edge solutions for tomorrow's challenges</p>
+                </div>
+              </div>
+              
+              <div className="value-item">
+                <div className="value-icon">
+                  <span>🤝</span>
+                </div>
+                <div>
+                  <h3 className="value-title">Partnership</h3>
+                  <p className="value-description">Collaborative approach that puts your success first</p>
+                </div>
+              </div>
+            </div>
+            
+         
+          </div>
           
           <div className="about-visual">
-            {/* <div className="creative-gallery">
-              <div 
-                className="gallery-item"
-                onMouseEnter={() => handleGalleryInteraction('Design')}
-              >
-                🎨
-              </div>
-              <div 
-                className="gallery-item"
-                onMouseEnter={() => handleGalleryInteraction('Code')}
-              >
-                💻
-              </div>
-              <div 
-                className="gallery-item"
-                onMouseEnter={() => handleGalleryInteraction('Strategy')}
-              >
-                🎯
-              </div>
-              <div 
-                className="gallery-item"
-                onMouseEnter={() => handleGalleryInteraction('Innovation')}
-              >
-                ⚡
-              </div>
-              <div 
-                className="gallery-item"
-                onMouseEnter={() => handleGalleryInteraction('Growth')}
-              >
-                📈
-              </div>
-              <div 
-                className="gallery-item"
-                onMouseEnter={() => handleGalleryInteraction('Success')}
-              >
-                🏆
-              </div>
-            </div> */}
-            
-            {/* <div className="team-highlight">
-              <div className="team-avatars">
-                <div className="team-avatar">🎨</div>
-                <div className="team-avatar">💻</div>
-                <div className="team-avatar">🚀</div>
-              </div>
-              <div className="team-text">Creative Team</div>
-            </div> */}
-
-            <div className="about-values">
-              <div 
-                className="value-item"
-                onMouseEnter={() => handleValueInteraction('Creative Vision')}
-              >
-                <div className="value-icon">🎨</div>
-                <div className="value-title">Creative Vision</div>
-                <div className="value-description">We see beyond the ordinary to create extraordinary digital experiences</div>
-              </div>
-              
-              <div 
-                className="value-item"
-                onMouseEnter={() => handleValueInteraction('Lightning Fast')}
-              >
-                <div className="value-icon">⚡</div>
-                <div className="value-title">Lightning Fast</div>
-                <div className="value-description">Optimized performance that keeps your audience engaged and coming back</div>
-              </div>
-              
-              <div 
-                className="value-item"
-                onMouseEnter={() => handleValueInteraction('Future Ready')}
-              >
-                <div className="value-icon">🚀</div>
-                <div className="value-title">Future Ready</div>
-                <div className="value-description">Built with tomorrow's technology, designed for today's needs</div>
-              </div>
-              
-              <div 
-                className="value-item"
-                onMouseEnter={() => handleValueInteraction('Smart Solutions')}
-              >
-                <div className="value-icon">🧠</div>
-                <div className="value-title">Smart Solutions</div>
-                <div className="value-description">Intelligent design decisions backed by data and user insights</div>
-              </div>
+          <div className="about-badge">
+              <span>💡</span>
+              About Prysmgrid
             </div>
-          </div>
-
-          <div className="about-content">
-            <div className="about-badge">
-              <span>🎨 Our Creative Process</span>
-            </div>
-            
-            <h2>We're Passionate <span className="text-gradient">Creators</span> Building Digital Magic</h2>
-            
+            <h2>
+              Crafting brands that 
+              <span className="text-gradient"> inspire and connect</span>
+            </h2>
             <p className="about-description">
-              Our team combines artistic vision with technical expertise to create digital experiences that don't just look beautiful—they tell stories, evoke emotions, and drive meaningful results for your business.
+              At Prysmgrid, we believe every brand has a unique story waiting to be told. We combine strategic thinking, creative excellence, and cutting-edge technology to build brands that don't just look good—they perform exceptionally and create lasting connections with audiences.
             </p>
-            
-          
-            
-           
+          <div className="about-cta">
+              <button className="about-btn" onClick={handleLearnMoreClick}>
+                Learn More About Us
+                <span>→</span>
+              </button>
+            </div>
           </div>
         </div>
       </div>
+      
+      {/* Floating decorative elements */}
+      <div className="about-decoration"></div>
+      <div className="about-decoration"></div>
     </section>
   );
 };

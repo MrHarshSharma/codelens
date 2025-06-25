@@ -219,6 +219,7 @@
   position: relative;
 }
 
+/* Enhanced 3D showcase cards with avatars */
 .showcase-card {
   background: rgba(255, 255, 255, 0.8);
   backdrop-filter: blur(30px) saturate(180%);
@@ -231,6 +232,7 @@
   position: relative;
   overflow: hidden;
   transform-style: preserve-3d;
+  perspective: 1000px;
 }
 
 .showcase-card::before {
@@ -246,29 +248,39 @@
   border-radius: var(--radius-organic) var(--radius-organic) 0 0;
 }
 
+.showcase-card::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: radial-gradient(circle, rgba(109, 30, 62, 0.1) 0%, transparent 70%);
+  border-radius: 50%;
+  transition: all var(--transition-slow);
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+
 .showcase-card:hover {
-  transform: translateY(-8px) rotateX(5deg) rotateY(3deg);
-  box-shadow: var(--shadow-artistic);
+  transform: translateY(-15px) rotateX(10deg) rotateY(8deg) translateZ(50px);
+  box-shadow: 
+    var(--shadow-artistic),
+    0 30px 60px -10px rgba(109, 30, 62, 0.2),
+    0 0 0 1px rgba(255, 255, 255, 0.1);
 }
 
 .showcase-card:hover::before {
   opacity: 1;
 }
 
-.showcase-card:nth-child(1) {
-  animation: artisticFloat 8s ease-in-out infinite;
+.showcase-card:hover::after {
+  width: 200px;
+  height: 200px;
 }
 
-.showcase-card:nth-child(2) {
-  animation: artisticFloat 8s ease-in-out infinite 2s;
-}
-
-.showcase-card:nth-child(3) {
-  animation: artisticFloat 8s ease-in-out infinite 4s;
-}
-
-.showcase-card:nth-child(4) {
-  animation: artisticFloat 8s ease-in-out infinite 6s;
+.showcase-card:hover .showcase-icon {
+  transform: translateZ(30px) rotateY(20deg) scale(1.2);
 }
 
 .showcase-icon {
@@ -284,22 +296,70 @@
   color: var(--text-inverse);
   box-shadow: var(--shadow-colored);
   animation: artisticWiggle 4s ease-in-out infinite;
+  transition: all var(--transition-elastic);
+  transform-style: preserve-3d;
+  position: relative;
 }
 
+.showcase-icon::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  background: var(--gradient-cosmic);
+  border-radius: inherit;
+  opacity: 0;
+  filter: blur(8px);
+  transition: opacity var(--transition-normal);
+  z-index: -1;
+}
+
+.showcase-card:hover .showcase-icon::before {
+  opacity: 0.7;
+}
+
+/* Enhanced 3D avatar icons with meaningful designs */
 .showcase-card:nth-child(1) .showcase-icon {
   background: var(--gradient-sunset);
+}
+
+.showcase-card:nth-child(1) .showcase-icon::after {
+  content: '🎨';
+  position: absolute;
+  font-size: 1.8rem;
+  filter: none;
 }
 
 .showcase-card:nth-child(2) .showcase-icon {
   background: var(--gradient-ocean);
 }
 
+.showcase-card:nth-child(2) .showcase-icon::after {
+  content: '💎';
+  position: absolute;
+  font-size: 1.8rem;
+  filter: none;
+}
+
 .showcase-card:nth-child(3) .showcase-icon {
   background: var(--gradient-forest);
 }
 
+.showcase-card:nth-child(3) .showcase-icon::after {
+  content: '🚀';
+  position: absolute;
+  font-size: 1.8rem;
+  filter: none;
+}
+
 .showcase-card:nth-child(4) .showcase-icon {
   background: var(--gradient-fire);
+}
+
+.showcase-card:nth-child(4) .showcase-icon::after {
+  content: '⭐';
+  position: absolute;
+  font-size: 1.8rem;
+  filter: none;
 }
 
 .showcase-title {

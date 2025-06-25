@@ -8,7 +8,7 @@ const Footer = () => {
         <div className="footer-content">
           <div className="footer-section">
             <img 
-              src="/logo.png" 
+              src="/transparent_white_logo.png" 
               alt="prysmgrid Logo" 
               className="logo-img"
               width="150"
