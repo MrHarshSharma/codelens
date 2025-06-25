@@ -14,7 +14,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem 20px;
+  padding: 2.2rem 20px 2.2rem 20px;
   height: 100%;
 }
 
@@ -42,6 +42,18 @@
   font-size: 1rem;
   transition: all 0.3s ease;
   position: relative;
+  outline: none; /* Remove focus outline */
+}
+
+/* Remove focus outline for mouse users but keep for keyboard users */
+.nav a:focus {
+  outline: none;
+}
+
+.nav a:focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+  border-radius: 4px;
 }
 
 .nav a:hover {
@@ -75,6 +87,18 @@
   justify-content: space-between;
   position: relative;
   z-index: 1001;
+  outline: none; /* Remove focus outline from menu toggle */
+}
+
+/* Remove focus outline for menu toggle but keep for keyboard users */
+.menu-toggle:focus {
+  outline: none;
+}
+
+.menu-toggle:focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+  border-radius: 4px;
 }
 
 .menu-line {

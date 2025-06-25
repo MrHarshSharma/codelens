@@ -33,7 +33,7 @@ const Header = () => {
             src="/logo.png" 
             alt="prysmgrid Logo" 
             className="logo-img"
-            width="150"
+            width="180"
             height="55"
             loading="eager"
             fetchpriority="high"
