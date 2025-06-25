@@ -136,14 +136,11 @@ const BookingPopup = ({ isVisible, onClose }) => {
     
     // Small delay to ensure popup closes before initiating call
     setTimeout(() => {
-      window.location.href = 'tel:+1234567890';
+      window.location.href = 'tel:9665654326';
     }, 300);
   };
 
-  const handleWhatsAppClick = () => {
-    trackExternalLink('https://wa.me/1234567890', 'booking_popup', 'whatsapp_chat');
-    window.open('https://wa.me/1234567890?text=Hi! I saw your special offer and would like to discuss my branding project.', '_blank');
-  };
+ 
 
   const handleCloseClick = () => {
     onClose();
